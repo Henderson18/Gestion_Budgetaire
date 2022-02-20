@@ -78,7 +78,7 @@ namespace GesBudgetaire
             app.UseCors("AllowSpecificOrigin");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();

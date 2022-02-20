@@ -17,5 +17,7 @@ namespace GesBudgetaire.Models.Repository.GesBudgetaire
         void Delete(int idutilisateur);
 
         bool UtilisateurExists(int id);
+
+        Utilisateur findByEmail(string email);
     }
 }

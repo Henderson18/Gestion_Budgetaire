@@ -32,6 +32,9 @@ namespace GesBudgetaire.Models.Implementations.GesBudgetaire
             bd_gestionbudgetaireContext.SaveChanges();
         }
 
+        public Utilisateur findByEmail(string email) => bd_gestionbudgetaireContext.Utilisateur.First(n => n.Email == email);
+        
+
         public Utilisateur UpdateAsync(Utilisateur utilisateur)
         {
             Utilisateur user = bd_gestionbudgetaireContext.Utilisateur.Update(utilisateur).Entity;
