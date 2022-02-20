@@ -1,8 +1,12 @@
 
+using GesBudgetaire.Models;
+using GesBudgetaire.Models.Implementations.GesBudgetaire;
+using GesBudgetaire.Models.Repository.GesBudgetaire;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -50,10 +54,10 @@ namespace GesBudgetaire
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
-            //services.AddDbContext<bd_rceContext>(options =>
-           /// options.UseMySql("server=localhost; port=3306; database=bd_rce; user=root; password=david"));
+            services.AddDbContext<gestionbudgetaireContext>(options =>
+            options.UseMySql("server=localhost; port=3306; database=gestionbudgetaire; user=root; password=david"));
 
-            //services.AddTransient<IPaysRepository, PaysRepository>();
+            services.AddTransient<IUtilisateurRepository, UtilisateurRepository>();
            
 
             services.AddHttpClient();
