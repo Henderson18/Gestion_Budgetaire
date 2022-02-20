@@ -58,7 +58,9 @@ namespace GesBudgetaire
             options.UseMySql("server=localhost; port=3306; database=gestionbudgetaire; user=root; password=david"));
 
             services.AddTransient<IUtilisateurRepository, UtilisateurRepository>();
-           
+            services.AddTransient<IRevenuRepository, RevenuRepository>();
+            services.AddTransient<IDepenseRepository, DepenseRepository>();
+
 
             services.AddHttpClient();
         }
